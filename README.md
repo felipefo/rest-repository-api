@@ -1,5 +1,11 @@
 # Usage 
 
+## Notes
+
+If you need authentication, you need to set into localstorage. 
+```
+localStorage.setItem('authToken') 
+```
 ## Usando o repository diretamente
 Como usar esta biblioteca. In this example, we create a RepositoryBase for a entity todo. This RepositoryBase has the CRUD default operations like, create update, delete, list... 
 
