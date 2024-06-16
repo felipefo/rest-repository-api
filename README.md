@@ -40,3 +40,7 @@ Test Suites: 2 passed, 2 total
 Tests:       15 passed, 15 total
 
 ```
+
+## Documentation 
+
+![Diagrama da biblioteca](Repository_diagram.png)
