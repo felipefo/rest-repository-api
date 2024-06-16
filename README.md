@@ -1,5 +1,6 @@
 # Usage 
 
+## Usando o repository diretamente
 Como usar esta biblioteca. In this example, we create a RepositoryBase for a entity todo. This RepositoryBase has the CRUD default operations like, create update, delete, list... 
 
 ```
@@ -13,6 +14,20 @@ Como usar esta biblioteca. In this example, we create a RepositoryBase for a ent
   ....
 
 ```
+## Usando o caso de uso generico ou o authusecase
+```
+   const authUseCase = new AuthUseCase();
+    //action.execute(form)
+   
+    authUseCase.login(formData).then(token => {
+        alert('Logged in successfully, token:'+ token);
+        console.log('Logged in successfully, token:', token);
+    }).catch((error: Error) => {
+        alert('Login failed:'+ error.message);
+        console.error('Login failed:', error.message);
+    });
+```
+
 # Config
 
 Use .env for configuring URL API
