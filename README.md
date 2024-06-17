@@ -15,7 +15,7 @@ Como usar esta biblioteca. In this example, we create a RepositoryBase for a ent
     //asking for a new repository base class having: add, get, update, remove, delete actions..
     repository = repo.createRepository('todo');//Getting an instance of repository
     data = { id: 1, title: 'Test Todo' };
-    const dataCreated = await repository.add(data,token); // Creating a new tudo into the system.
+    const dataCreated = await repository.add(data,token); // Creating a new todo into the system.
     ;
   }
   ....
@@ -68,3 +68,6 @@ Tests:       15 passed, 15 total
 ## Documentation 
 
 ![Diagrama da biblioteca](Repository_diagram.png)
+
+
+![Diagrama da biblioteca](UseCase_diagram.png)
