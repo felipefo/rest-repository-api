@@ -5,4 +5,4 @@ interface IGenericUseCase {
     delete(data: any): Promise<string>;
     update(data: any): Promise<string>;
   }
-export default IGenericUseCase
+export default IGenericUseCase;

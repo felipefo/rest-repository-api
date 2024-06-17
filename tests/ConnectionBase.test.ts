@@ -102,6 +102,6 @@ describe('ConnectionBase', () => {
         const todoData = { title: 'Test Todo' };
         mockedAxios.post.mockRejectedValueOnce(new Error('Request failed with status code 401'));
 
-        await expect(connectionBase.post(todoData, { token: 'invalid-token' })).rejects.toThrowError('Failed to post: Request failed with status code 401');
+        await expect(connectionBase.post(todoData, { token: 'invalid-token' })).rejects.toThrowError('Request failed with status code 401');
     });
 });

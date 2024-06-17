@@ -1,3 +1,7 @@
+/*@author: Felipe F. de Oliveira
+
+*/
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // src/repositories/TodoRepository.js

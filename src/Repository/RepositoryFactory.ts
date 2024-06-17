@@ -1,3 +1,7 @@
+/*@author: Felipe F. de Oliveira
+
+*/
+
 import ConnectionBase from './ConnectionBase';
 import IRepositoryBase from './IRepositoryBase';
 import RepositoryBase from './RepositoryBase';

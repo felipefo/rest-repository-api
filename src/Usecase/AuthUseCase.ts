@@ -1,9 +1,11 @@
 //TODO: fazer o resto das requisicoes relacionadas a autenticacao
 import RepositoryFactory from '../Repository/RepositoryFactory';
 import UserRepository from '../Repository/UserRepository';
+import IAuthUseCase from './IAuthUseCase';
+
 
  
-class LoginUseCase {
+class AuthUseCase implements IAuthUseCase {
   private repositoryFactory: RepositoryFactory;
 
   constructor() {
@@ -36,4 +38,4 @@ class LoginUseCase {
   }
 }
 
-export default LoginUseCase;
+export default AuthUseCase;

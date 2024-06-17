@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 //TODO: fazer o resto das requisicoes relacionadas a autenticacao
 const RepositoryFactory_1 = __importDefault(require("../Repository/RepositoryFactory"));
-class LoginUseCase {
+class AuthUseCase {
     constructor() {
         this.repositoryFactory = RepositoryFactory_1.default.getInstance();
     }
@@ -48,4 +48,4 @@ class LoginUseCase {
         localStorage.setItem('authToken', token);
     }
 }
-exports.default = LoginUseCase;
+exports.default = AuthUseCase;

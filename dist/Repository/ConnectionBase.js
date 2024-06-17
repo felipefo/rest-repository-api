@@ -1,4 +1,7 @@
 "use strict";
+/*@author: Felipe F. de Oliveira
+
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-unused-vars */
@@ -37,7 +40,7 @@ class ConnectionBase {
             }
             catch (error) {
                 console.error(`Failed to post: ${error.message}`);
-                throw new Error(`Failed to post: ${error.message}`);
+                throw error;
             }
         });
     }
@@ -51,7 +54,7 @@ class ConnectionBase {
             }
             catch (error) {
                 console.error(`Failed to get: ${error.message}`);
-                throw new Error(`${error.message}`);
+                throw error;
             }
         });
     }
@@ -65,7 +68,7 @@ class ConnectionBase {
             }
             catch (error) {
                 console.error(`Failed to update: ${error.message}`);
-                throw new Error(`Failed to update: ${error.message}`);
+                throw error;
             }
         });
     }
@@ -79,7 +82,7 @@ class ConnectionBase {
             }
             catch (error) {
                 console.error(`Failed to get by id: ${error.message}`);
-                throw new Error(`Failed to get by id: ${error.message}`);
+                throw error;
             }
         });
     }
@@ -93,7 +96,7 @@ class ConnectionBase {
             }
             catch (error) {
                 console.error(`Failed to delete: ${error.message}`);
-                throw new Error(`Failed to delete: ${error.message}`);
+                throw error;
             }
         });
     }

@@ -1,3 +1,6 @@
+/*@author: Felipe F. de Oliveira
+
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-unused-vars */
@@ -29,7 +32,7 @@ class ConnectionBase implements IConnectionBase {
       return response.data;
     } catch (error: any) {
       console.error(`Failed to post: ${error.message}`);
-      throw new Error(`Failed to post: ${error.message}`);
+      throw error;
     }
   }
   async get(params?: any, token?: string): Promise<any> {
@@ -40,7 +43,7 @@ class ConnectionBase implements IConnectionBase {
       return response.data;
     } catch (error: any) {
       console.error(`Failed to get: ${error.message}`);
-      throw new Error(`${error.message}`);
+      throw error;
     }
   }
 
@@ -53,7 +56,7 @@ class ConnectionBase implements IConnectionBase {
       return response.data;
     } catch (error: any) {
       console.error(`Failed to update: ${error.message}`);
-      throw new Error(`Failed to update: ${error.message}`);
+      throw error;
     }
   }
   async getById(id: string, token?: string): Promise<any> {
@@ -64,7 +67,7 @@ class ConnectionBase implements IConnectionBase {
       return response.data;
     } catch (error: any) {
       console.error(`Failed to get by id: ${error.message}`);
-      throw new Error(`Failed to get by id: ${error.message}`);
+      throw error;
     }
   }
   async remove(id: string, token?: string): Promise<any> {
@@ -75,7 +78,7 @@ class ConnectionBase implements IConnectionBase {
       return response.data;
     } catch (error: any) {
       console.error(`Failed to delete: ${error.message}`);
-      throw new Error(`Failed to delete: ${error.message}`);
+      throw error;
     }
   }
 
