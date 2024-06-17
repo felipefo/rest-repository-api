@@ -10,6 +10,7 @@ localStorage.setItem('authToken')
 Como usar esta biblioteca. In this example, we create a RepositoryBase for a entity todo. This RepositoryBase has the CRUD default operations like, create update, delete, list... 
 
 ```
+    import { RepositoryFactory } from 'rest-respository-api';
     const repo = RepositoryFactory.getInstance();
     //asking for a new repository base class having: add, get, update, remove, delete actions..
     repository = repo.createRepository('todo');//Getting an instance of repository
@@ -22,6 +23,8 @@ Como usar esta biblioteca. In this example, we create a RepositoryBase for a ent
 ```
 ## Usando o caso de uso generico ou o authusecase
 ```
+
+   import { AuthUseCase } from 'rest-respository-api';
    const authUseCase = new AuthUseCase();
     //action.execute(form)
    

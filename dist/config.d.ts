@@ -1,4 +1,4 @@
 export declare const config: {
-    nodeEnv: string | undefined;
-    apiUrl: string | undefined;
+    nodeEnv: string;
+    apiUrl: string;
 };

@@ -1,4 +1,4 @@
-import IGenericUseCase from "./IGenericUseCase";
+import IGenericUseCase from './IGenericUseCase';
 declare class GenericUseCase implements IGenericUseCase {
     private repository;
     private entity;

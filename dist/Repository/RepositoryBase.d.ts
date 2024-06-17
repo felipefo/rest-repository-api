@@ -1,7 +1,7 @@
 import ConnectionBase from './ConnectionBase';
 import IRepositoryBase from './IRepositoryBase';
 declare class RepositoryBase implements IRepositoryBase {
-    protected connectionBase: ConnectionBase;
+    protected connectionBase: any;
     constructor(connectionBase: ConnectionBase);
     add(todoData: any, token?: string): Promise<any>;
     update(todoData: any, id: string, token?: string): Promise<any>;
