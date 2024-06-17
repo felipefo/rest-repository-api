@@ -5,7 +5,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/felipefo/rest-repository-api.gitt"
+    "url": "https://github.com/felipefo/rest-repository-api.git"
   },
   "author": "Felipe Frechiani de Oliveira",
   "scripts": {
