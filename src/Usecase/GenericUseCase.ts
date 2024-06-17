@@ -1,5 +1,5 @@
-import RepositoryFactory from "../Repository/RepositoryFactory";
-import IGenericUseCase from "./IGenericUseCase";
+import RepositoryFactory from '../Repository/RepositoryFactory';
+import IGenericUseCase from './IGenericUseCase';
 
 
 

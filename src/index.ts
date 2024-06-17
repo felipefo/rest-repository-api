@@ -13,7 +13,6 @@ import RepositoryFactory from './Repository/RepositoryFactory';
 export { RepositoryFactory };
 import UserRepository from './Repository/UserRepository';
 export { UserRepository };
-
 import AuthUseCase from './UseCase/AuthUseCase';
 export { AuthUseCase };
 import IAuthUseCase from './UseCase/IAuthUseCase';
