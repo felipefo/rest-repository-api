@@ -1,23 +1,10 @@
-import * as dotenv from 'dotenv';
-import * as fs from 'fs';
-import * as path from 'path';
 
-const loadEnv = () => {
-  const nodeEnv = process.env.NODE_ENV || 'development';
-  const envFilePath = path.resolve(__dirname, `../.env.${nodeEnv}`);
+const envs = {
+   'homologacao': 'https://api-homologacao.com',
+    'desenvolvimento': 'https://api-desenvolvimento.com',
+    'producao': 'https://api-producao.com'
+  };
 
-  if (fs.existsSync(envFilePath)) {
-    dotenv.config({ path: envFilePath });
-  } else {
-    throw new Error(`.env file not found for environment: ${nodeEnv}   em ${envFilePath}` );
-  }
-};
+const apiUrl = envs.desenvolvimento; // Defina o valor padrão para homologação
 
-loadEnv();
-
-export const config = {
-  nodeEnv: process.env.NODE_ENV,
-  apiUrl: process.env.API_URL,
-};
-
-export default config;
+export default apiUrl;
