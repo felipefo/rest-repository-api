@@ -24,6 +24,9 @@ export { IGenericUseCase };
 import GenericUseCaseFactory from './UseCase/GenericUseCaseFactory';
 export { GenericUseCaseFactory };
 
+import config from './config';
+export { config };
+
 
 
 

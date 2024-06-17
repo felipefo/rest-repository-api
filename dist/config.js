@@ -42,3 +42,4 @@ exports.config = {
     nodeEnv: process.env.NODE_ENV,
     apiUrl: process.env.API_URL,
 };
+exports.default = exports.config;
