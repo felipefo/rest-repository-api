@@ -1,5 +1,2 @@
-export declare const config: {
-    nodeEnv: string;
-    apiUrl: string;
-};
-export default config;
+declare const apiUrl: string;
+export default apiUrl;

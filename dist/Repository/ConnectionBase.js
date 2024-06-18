@@ -1,10 +1,7 @@
 "use strict";
 /*@author: Felipe F. de Oliveira
 
-
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable no-unused-vars */
+*/
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -18,16 +15,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-unused-vars */
 const axios_1 = __importDefault(require("axios"));
-const config_1 = require("../config");
+const config_1 = __importDefault(require("../config"));
 class ConnectionBase {
     constructor(path) {
         this.path = path;
-        if (config_1.config.apiUrl == undefined)
+        if (config_1.default == undefined)
             throw new Error('apiurl nao esta setada, por favor, verifique os arquivos de variavel de ambiente .env..');
-        this.apiBaseUrl = config_1.config.apiUrl;
-        console.debug(`Running in ${config_1.config.nodeEnv} mode`);
-        console.debug(`API URL is ${config_1.config.apiUrl}`);
+        this.apiBaseUrl = config_1.default;
+        console.debug(`Running in ${config_1.default} mode`);
+        console.debug(`API URL is ${config_1.default}`);
     }
     post(data, options) {
         return __awaiter(this, void 0, void 0, function* () {

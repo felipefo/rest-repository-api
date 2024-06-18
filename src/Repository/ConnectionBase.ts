@@ -1,5 +1,7 @@
 /*@author: Felipe F. de Oliveira
 
+*/
+
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -8,7 +10,7 @@
 import axios, { AxiosResponse } from 'axios';
 //generalizar a iniciacao da biblioteca!
 import IConnectionBase from './IConnectionBase';
-import { config } from '../config';
+import  apiUrl  from '../config';
 
 class ConnectionBase implements IConnectionBase {
   private path: string;
@@ -16,11 +18,11 @@ class ConnectionBase implements IConnectionBase {
 
   constructor(path: string) {
     this.path = path;
-    if(config.apiUrl == undefined)
+    if(apiUrl == undefined)
       throw new Error('apiurl nao esta setada, por favor, verifique os arquivos de variavel de ambiente .env..');
-    this.apiBaseUrl = config.apiUrl;
-    console.debug(`Running in ${config.nodeEnv} mode`);
-    console.debug(`API URL is ${config.apiUrl}`);
+    this.apiBaseUrl = apiUrl;
+    console.debug(`Running in ${apiUrl} mode`);
+    console.debug(`API URL is ${apiUrl}`);
   }
 
   async post(data: any, options?: { id?: string; token?: string }): Promise<any> {
