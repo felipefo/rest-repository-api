@@ -36,6 +36,10 @@ class AuthUseCase implements IAuthUseCase {
   private saveTokenToLocalStorage(token: string): void {
     localStorage.setItem('authToken', token);
   }
+
+  private getTokenFromLocalStorage(token: string): void {
+    localStorage.setItem('authToken', token);
+  }
 }
 
 export default AuthUseCase;
