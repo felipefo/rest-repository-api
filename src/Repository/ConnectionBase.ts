@@ -1,8 +1,5 @@
 /*@author: Felipe F. de Oliveira
-
 */
-
-
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-unused-vars */
@@ -18,12 +15,18 @@ class ConnectionBase implements IConnectionBase {
 
   constructor(path: string) {
     this.path = path;
-    if(apiUrl == undefined)
-      throw new Error('apiurl nao esta setada, por favor, verifique os arquivos de variavel de ambiente .env..');
-    this.apiBaseUrl = apiUrl;
-    console.debug(`Running in ${apiUrl} mode`);
-    console.debug(`API URL is ${apiUrl}`);
-  }
+    if(process.env.API_URL != undefined) //only for vue projects 
+    {
+      this.apiBaseUrl = process.env.API_URL;
+      console.debug(`API URL is ${this.apiBaseUrl}`);
+    }else if(this.apiBaseUrl == undefined)
+      this.apiBaseUrl = apiUrl;
+     // throw new Error('apiurl nao esta setada, por favor, verifique o arquivo ./src/config.js');
+     
+    if(this.apiBaseUrl == undefined)
+      throw new Error('process.env.API_URL, por favor, verifique os arquivos de variavel de ambiente .env');
+    }
+
 
   async post(data: any, options?: { id?: string; token?: string }): Promise<any> {
     const { id, token } = options || {};

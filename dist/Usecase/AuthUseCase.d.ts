@@ -5,5 +5,6 @@ declare class AuthUseCase implements IAuthUseCase {
     login(data: any): Promise<string>;
     recovery(data: any): Promise<string>;
     private saveTokenToLocalStorage;
+    private getTokenFromLocalStorage;
 }
 export default AuthUseCase;

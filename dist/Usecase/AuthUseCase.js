@@ -47,5 +47,8 @@ class AuthUseCase {
     saveTokenToLocalStorage(token) {
         localStorage.setItem('authToken', token);
     }
+    getTokenFromLocalStorage(token) {
+        localStorage.setItem('authToken', token);
+    }
 }
 exports.default = AuthUseCase;
