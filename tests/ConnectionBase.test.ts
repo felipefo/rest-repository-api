@@ -2,7 +2,7 @@ import axios from 'axios';
 import ConnectionBase from '../src/Repository/ConnectionBase';
 
 import { afterEach, beforeEach, describe, expect, it, jest } from '@jest/globals';
-import  apiUrl  from '../src/config';
+import {configure} from '../src/utils';
 
 // Mockando o axios
 jest.mock('axios');
@@ -12,13 +12,17 @@ describe('ConnectionBase', () => {
     let connectionBase: ConnectionBase;
     
     beforeEach(() => {
-      
+        configure({
+            apiUrl: 'https://api-desenvolvimento.com'
+        });
         connectionBase = new ConnectionBase('todos');
     });
 
     afterEach(() => {
         jest.clearAllMocks();
     });
+
+
 
     it('should post data successfully', async () => {
         const todoData = { title: 'Test Todo' };
@@ -93,10 +97,6 @@ describe('ConnectionBase', () => {
         expect(response).toEqual(responseData);
     });
 
-    it('should throw error if apiUrl is not set', () => {
-        if(apiUrl == undefined)
-            expect(apiUrl == undefined).toEqual(false);
-    });
 
     it('should throw error if post request is unauthorized', async () => {
         const todoData = { title: 'Test Todo' };

@@ -7,7 +7,9 @@
 import axios, { AxiosResponse } from 'axios';
 //generalizar a iniciacao da biblioteca!
 import IConnectionBase from './IConnectionBase';
-import  apiUrl  from '../config';
+import { getApiUrl } from '../utils';
+
+// Suponha que configure aceite um objeto de configuração
 
 class ConnectionBase implements IConnectionBase {
   private path: string;
@@ -15,17 +17,11 @@ class ConnectionBase implements IConnectionBase {
 
   constructor(path: string) {
     this.path = path;
-    if(process.env.API_URL != undefined) //only for vue projects 
-    {
-      this.apiBaseUrl = process.env.API_URL;
-      console.debug(`API URL is ${this.apiBaseUrl}`);
-    }else if(this.apiBaseUrl == undefined)
-      this.apiBaseUrl = apiUrl;
+  
+
+    this.apiBaseUrl = getApiUrl();
      // throw new Error('apiurl nao esta setada, por favor, verifique o arquivo ./src/config.js');
-     
-    if(this.apiBaseUrl == undefined)
-      throw new Error('process.env.API_URL, por favor, verifique os arquivos de variavel de ambiente .env');
-    }
+  }
 
 
   async post(data: any, options?: { id?: string; token?: string }): Promise<any> {

@@ -24,8 +24,11 @@ export { IGenericUseCase };
 import GenericUseCaseFactory from './UseCase/GenericUseCaseFactory';
 export { GenericUseCaseFactory };
 
-import config from './config';
-export { config };
+import { configure  } from './utils';
+export { configure };
+import { getApiUrl} from  './utils'; 
+export { getApiUrl };
+
 
 
 

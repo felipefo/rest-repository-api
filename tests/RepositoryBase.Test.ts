@@ -2,6 +2,8 @@
 import ConnectionBase from '../src/Repository/ConnectionBase';
 import RepositoryBase from '../src/Repository/RepositoryBase';
 import { jest } from '@jest/globals';
+import { configure }  from '../src/utils';
+
 
 // Mock da classe ConnectionBase
 jest.mock('../src/Repository/ConnectionBase');
@@ -12,6 +14,9 @@ describe('RepositoryBase', () => {
     let connectionBase: jest.Mocked<ConnectionBase>;
 
     beforeEach(() => {
+        configure({
+            apiUrl: 'https://api-desenvolvimento.com'
+        });
         connectionBase = new MockedConnectionBase('todos') as jest.Mocked<ConnectionBase>;
         repositoryBase = new RepositoryBase(connectionBase);
     });

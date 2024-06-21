@@ -39,11 +39,13 @@ Como usar esta biblioteca. In this example, we create a RepositoryBase for a ent
 
 # Config
 
-Use .env for configuring URL API
-
-NODE_ENV=homologation
-API_URL=http://localhost:5068
-
+Antes de usar inicie a url da api. 
+```
+import { configure } from 'rest-respository-api';
+configure({
+    apiUrl: 'https://api-desenvolvimento.com'
+});
+```
 
 ## Install 
 

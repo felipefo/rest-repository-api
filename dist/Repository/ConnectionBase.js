@@ -18,20 +18,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
-const config_1 = __importDefault(require("../config"));
+const utils_1 = require("../utils");
+// Suponha que configure aceite um objeto de configuração
 class ConnectionBase {
     constructor(path) {
         this.path = path;
-        if (process.env.API_URL != undefined) //only for vue projects 
-         {
-            this.apiBaseUrl = process.env.API_URL;
-            console.debug(`API URL is ${this.apiBaseUrl}`);
-        }
-        else if (this.apiBaseUrl == undefined)
-            this.apiBaseUrl = config_1.default;
+        this.apiBaseUrl = (0, utils_1.getApiUrl)();
         // throw new Error('apiurl nao esta setada, por favor, verifique o arquivo ./src/config.js');
-        if (this.apiBaseUrl == undefined)
-            throw new Error('process.env.API_URL, por favor, verifique os arquivos de variavel de ambiente .env');
     }
     post(data, options) {
         return __awaiter(this, void 0, void 0, function* () {
